@@ -1,0 +1,37 @@
+package demo;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+public class simple {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.edge.driver","C:\\Users\\srava\\eclipse-workspace\\demo\\msedgedriver.exe");
+        WebDriver driver= new EdgeDriver();
+        driver.get("https://www.google.com/search?q=image&rlz=1C1UEAD_enIN977IN977&oq=image&aqs=chrome..69i57j0i131i433i512l3j0i512j0i131i433i512l4j0i512.1326j0j7&sourceid=chrome&ie=UTF-8");
+
+	}
+
+}
+
+
+
+
+package javaProject;
+
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
+
+public class blur {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+		Mat image = Imgcodecs.imread("images.jpg");
+		Mat filteredImage = new Mat();
+		Imgproc.GaussianBlur(image, filteredImage, new Size(7, 7), 500);
+		Imgcodecs.imwrite("C:\\Users\\srava\\OneDrive\\Desktop\\output.jpg", filteredImage);
+	}
+}
